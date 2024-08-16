@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      li {
+  float: left;
+  padding:2px 50px;
+  
+}
+ul {
+  background-color: #0e0d0d;
+  padding: 3%;
+  
+}
+a {
+  display: block;
+  padding: 4px;
+  background-color: #0e0d0d;
+  color:#FFA500 ;
+}
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th {
+        text-align: left;
+        padding: 9px;
+        color: #FFA500
+      }
+      td {
+        text-align: left;
+        padding: 8px;
+        color:blank;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #D6EEEE;
+      }
+     
+      </style>
+  </head>
+  <body>
+    <header>
+      
+      <ul>
+        <li style="color: white">Estructec lidederes en obras acabaos de primera</li>   
+        <li ><a href="default.asp"><i class="material-icons material-icon">home</i></a></li>
+        <li><a href="news.asp"><i class="material-icons material-icon">precision_manufacturing</i></a></li>
+        <li><a href="{% url 'blog' %}"><i class="material-icons material-icon">list_alt_add</i></a></li>
+        <li><a href="about.asp"><i class="material-icons material-icon">person</i></a></li>
+      </ul>
+    </header>
+    <main>
+      <h1>Busqueda</h1>  
+      <div>
+        <p>cliente</p>
+        
+      </div>
+      <div>
+        <p>Fechas desde</p>
+        
+      </div>
+
+      <table border="1px" style="border-collapse:collapse;"">
+        <thead bgcolor="#000"><font color="#FFA500">
+        <tr>
+          <th> Fecha Emision </th>
+          <th> Numero </th>
+          <th> Miércoles </th>
+          <th> Costo total </th>
+          
+          </tr>
+        </thead> 
+        {% for cotizacion in cotizaciones %}
+        <tr ">
+          <td >fecha {{cotizacion.fecha_emision}}</td>
+          <td >numero {{cotizacion.numero}}</td>
+          <td >costo {{cotizacion.costo}}</td>
+          
+        </tr>
+        {% endfor %}
+      </table>
+      
+      
+    
+    
+      
+    </main>
+  </body>
+</html>
